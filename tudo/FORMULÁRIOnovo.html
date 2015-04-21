@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+ 
+<html>
+ <head>
+ <title>  </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+ </head>
+ 
+<script>
+function Enviar() 
+{ 
+	var nome = document.getElementById("nomeid"); 
+if (nome.value != "") 
+		{ alert('Obrigado sr(a) ' + nome.value + ' Os seus dados foram encaminhados com sucesso!'); 
+} 
+		} 
+		
+	 $imagemPerfil = $_FILES["imagemPerfil"]; 
+	 $host = "localhost"; 
+	 $username = "gabriela"; $password = "gabi86588391"; 
+	 $db = "BdIgreja"; 
+	 if($imagemPerfil != NULL) 
+	 {  $nomeFinal = time().'.jpg'; if (move_uploaded_file($imagemPerfil['tmp_name'], $nomeFinal)) { $tamanhoImg = filesize($nomeFinal);
+		$mysqlimagem = addslashes(fread(fopen($nomeFinal, "r"), $tamanhoImg)); mysql_connect($host,$username,$password) or die("Impossível Conectar");
+		@mysql_select_db($db) or die("Impossível Conectar");
+		mysql_query("INSERT INTO cadastro(imagem) VALUES ('$mysqlimagem')") or die("O sistema não foi capaz de executar a query");
+		unlink($nomeFinal); header("location:FORMULÁRIOnovo.html"); } } else { echo"Você não realizou o upload de forma satisfatória."; } 
+		
+
+		
+</script>
+ 
+ <body>
+  <h1> Primeira Igreja Batista em Muribeca</h1> 
+  <h2> Formulário - cadastro de Pessoas</h2><br />
+
+<form action="adicionar.php" method="post">
+
+<!-- DADOS PESSOAIS-->
+<fieldset>
+<legend>Dados Pessoais</legend>
+<table cellspacing="10">
+<tr>
+<td>
+	<label   for="nome"> Nome: </label>
+</td>
+	<td align="left">
+		<input type="text" size="60" name="email" required="required">
+	</td>
+</tr>
+  
+<tr>
+<td>
+	<label>Data de Nascimento: </label>
+</td>
+   <td align="left">
+   <input type="text" name="dataDeNascimento" size="2" maxlength="2" maxlength="2" placeholder="Dia" required="required"> 
+   <input type="text" name="dataDeNascimento" size="2" maxlength="2" maxlength="2" placeholder="Mês" required="required"> 
+   <input type="text" name="dataDeNascimento" size="4" maxlength="4" maxlength="4" placeholder="Ano" required="required">
+</td>
+</tr>
+ 
+  
+<tr>
+<td>
+   <label>Data de Batismo: </label>
+</td>
+    <td align="left">
+	<input type="text" name="dataBatismo" size="2" maxlength="2" maxlength="2" placeholder="Dia"> 
+	<input type="text" name="dataBatismo" size="2" maxlength="2" maxlength="2" placeholder="Mês"> 
+    <input type="text" name="dataBatismo" size="4" maxlength="4" maxlength="4" placeholder="Ano">
+	</td>
+</tr>
+
+<tr>
+<td>
+	<label for="sexo">Sexo:</label>
+</td>
+<td align="left">
+    <select name="sexo"> 
+	<option ></option> 
+    <option value="F">Feminino</option> 
+    <option value="M">Masculino</option> 
+</td>
+</tr>
+
+<tr>
+<td>
+	<label for="cônjuge" cellspacing="10">Cônjuge:</label>
+</td>
+<td align="left">
+    <select name="cônjuge"> 
+	<option ></option> 
+    <option >Solteiro(a)</option> 
+    <option >Casado(a)</option> 
+	<option >Divorciado(a)</option>
+	<option >Viúvo(a)</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+	<label for="rg">RG: </label>
+</td>
+   <td align="left">
+	<input type="text" name="rg" size="19" maxlength="7" > 
+   </td>
+</tr>
+
+<tr>
+<td>
+	<label>CPF:</label>
+	
+</td>
+   <td align="left">
+		<input type="text" name="cpf" size="11" maxlength="11"> - <input type="text" name="cpf2" size="2" maxlength="2">
+   </td>
+</tr>
+</table>
+</fieldset>
+
+<br />
+<!-- ENDEREÇO -->
+<fieldset>
+ <legend>Dados de Endereço</legend>
+ <table cellspacing="10">
+
+  <tr>
+   <td>
+    <label for="rua">Rua:</label>
+   </td>
+   <td align="left">
+    <input type="text" size="50" name="rua" required="required">
+   </td>
+   <td>
+    <label for="numero">Numero:</label>
+   </td>
+   <td align="left">
+    <input type="text" name="numero" size="4" required="required">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="bairro">Bairro: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="bairro" required="required">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="estado">Estado:</label>
+   </td>
+   <td align="left">
+    <select name="estado"> 
+	<option ></option> 
+    <option value="ac">Acre</option> 
+    <option value="al">Alagoas</option> 
+    <option value="am">Amazonas</option> 
+    <option value="ap">Amapá</option> 
+    <option value="ba">Bahia</option> 
+    <option value="ce">Ceará</option> 
+    <option value="df">Distrito Federal</option> 
+    <option value="es">Espírito Santo</option> 
+    <option value="go">Goiás</option> 
+    <option value="ma">Maranhão</option> 
+    <option value="mt">Mato Grosso</option> 
+    <option value="ms">Mato Grosso do Sul</option> 
+    <option value="mg">Minas Gerais</option> 
+    <option value="pa">Pará</option> 
+    <option value="pb">Paraíba</option> 
+    <option value="pr">Paraná</option> 
+    <option value="pe">Pernambuco</option> 
+    <option value="pi">Piauí</option> 
+    <option value="rj">Rio de Janeiro</option> 
+    <option value="rn">Rio Grande do Norte</option> 
+    <option value="ro">Rondônia</option> 
+    <option value="rs">Rio Grande do Sul</option> 
+    <option value="rr">Roraima</option> 
+    <option value="sc">Santa Catarina</option> 
+    <option value="se">Sergipe</option> 
+    <option value="sp">São Paulo</option> 
+    <option value="to">Tocantins</option> 
+   </select>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="cidade">Cidade: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="cidade" required="required">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="cep">CEP: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="cep" size="5" maxlength="5"> - <input type="text" name="cep2" size="3" maxlength="3">
+   </td>
+  </tr>
+ </table>
+</fieldset>
+<br />
+<br />
+
+<!-- DADOS DE PERFIL -->
+<fieldset>
+ <legend>Dados do Perfil</legend>
+<tr>
+		<td>
+		<label for="imagem">Imagem de perfil:</label>
+		</td>
+   <td>
+   <input type="file" name="imagem" required="required">
+   </td>
+<br/>
+<br/>
+
+</br>
+</br>
+
+<tr>
+<td>
+	<label for="statuus" cellspacing="10">Status:</label>
+</td>
+<td align="left">
+    <select name="statuus"> 
+	<option ></option> 
+    <option >Ativo</option> 
+    <option >Afastado</option> 
+	<option >Em disciplina</option>
+	<option >Falecido</option>
+	</select>
+</td>
+</tr>
+
+</br>
+</br>
+
+<tr>
+<td>
+	<label for="nivel" cellspacing="10">Nível:</label>
+</td>
+<td align="left">
+    <select name="nivel" > 
+	<option ></option> 
+    <option >Pastor</option> 
+    <option >Diacono(a)</option> 
+	<option >Membro</option>
+	<option >Congregado</option>
+	</select>
+</td>
+</tr>
+
+<br/>
+<br/>
+
+<label>Descrições: </label>
+   </td>
+   <td align="left">
+    <textarea rows="5" cols="150" maxlength="5000" placeholder="                                                  Máximo de Caracte -> 5000
+	
+	
+	                Descreva data de batismo, data de disciplica(de 00/00/0000 até 00/00/000), data de Falecimento e etc..)"></textarea>
+   </td>
+  </tr>
+   
+</tr>
+</fieldset>
+<br />
+<br />
+<!-- DADOS DE CONTATOS-->
+<fieldset>
+ <legend>Dados de Contatos</legend>
+ 
+ <table cellspacing="10">
+  <tr>
+   <td>
+    <label for="nome">Fone 1: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="fone" size="9" maxlength="9" required="required">
+	<td>
+	
+<label for="nome">Fone 2: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="fone" size="9" maxlength="9" >
+   </td>
+  </tr>
+  <tr>
+
+ <tr>
+ <td>
+   <label for="bairro">Email: </label>
+ </td>
+ <td align="left">
+ <input type="text" name="email" required="required" size="40" placeholder="Ex.:***@gmail.com" >
+</td>
+</tr>
+
+</table>
+</fieldset>
+
+<!---->
+<ul>
+ <li id="document-action-print">
+            <a href="javascript:this.print();" title="">Imprimir</a>
+        </li>
+		
+		 <li id="document-action-sendto">
+            <a href="https://bay167.mail.live.com/"
+               title="">Enviar</a>
+        </li>
+    
+ </ul>   
+<br />
+<input type="submit" value="Salva cadastro">
+<input type="reset" value="Novo cadastro">
+</form>
+
+
+
+
+ </body>
+</html>

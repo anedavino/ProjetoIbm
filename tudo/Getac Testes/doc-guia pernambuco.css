@@ -1,0 +1,74 @@
+
+/******************************************--------CSS DO MENU--------****************************************************************/		
+
+*{margin:0 auto; padding: 0;}
+ 
+body{
+font-family: arial, helvetica, sans-serif;
+font-size:18px;
+}
+ 
+.menu{
+list-style:none;
+border:1px solid #001452;
+float:left; /*right;*/
+}
+.menu li{
+position:relative;
+float:left;
+border-right:1px solid #001452;
+}
+
+.menu li a{color:#000000; 
+		 text-decoration:none; 
+		 padding:5px 10px; 
+		 display:block;}
+		 
+.menu li:hover ul, .menu li.over ul{display:block;}
+
+.menu li ul li{
+border:1px solid #c0c0c0;
+display:block;
+width:150px;
+}
+/******************************************--------CSS HOME--------******************************************************************/	
+ .home{	background-color: #C5FFFF;
+		
+ }
+ 
+ footer { 
+    display: block;
+}
+/******************************************--------CSS PERNAMBUCO-------*************************************************************/	
+.pernambuco{background-color:#FF6699;
+}
+
+
+/*******************************************--------CSS LAZER--------****************************************************************/	
+.lazer{background-color:#80334C;
+}
+
+
+/******************************************--------CSS PERNAMBUCO-------*************************************************************/	
+.eventos{background-color:#333300;
+} 
+
+
+/******************************************--------CSS ONDE COMER--------*************************************************************/	
+.onde_comer{background-color:#FF99FF;
+}
+
+
+/******************************************--------CSS ONDE FICAR--------**************************************************************/	
+.onde_ficar{background-color:#CCFF33;
+}
+
+
+/******************************************--------CSS GALERIA DE FOTOS--------********************************************************/	
+.galeria_de_fotos{background-color:#006699;
+}
+ 
+/******************************************--------CSS CONTATOS--------****************************************************************/	
+.contatos{background-color:#666699;
+}
+

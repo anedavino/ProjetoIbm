@@ -1,0 +1,119 @@
+/*position:fixed*/
+/******************************************--------CSS DO MENU--------****************************************************************/		
+
+*{margin:0 auto; padding: 0;}
+ 
+body{
+font-family: arial, helvetica, sans-serif;
+font-size:26px;
+}
+ 
+.menu{
+list-style:none;
+border:1px solid #001452;
+float:left; /*right;*/
+position:fixed;
+background-color:#66CCFF;
+z-index:9;
+
+}
+
+.menu li{
+position:relative;
+float:left;
+border-right:1px solid #001452;
+}
+
+.menu li a{color:#000000; 
+		 text-decoration:none; 
+		 padding:5px 10px; 
+		 display:block;
+		 }
+		 
+.menu li:hover ul, .menu li.over ul{display:block;}
+
+.menu li ul li{
+border:1px solid #c0c0c0;
+display:block;
+width:150px;
+}
+
+.menu li ul li{
+border:2px solid #c0c0c0;
+display:block;
+width:260px;
+}
+
+.menu li  ul{
+position:absolute;
+top:25px;
+left:0;
+background-color:#fff;
+display:none;
+}  
+
+ 
+.menu li a:hover{
+background:#333;
+color:#fff;
+-moz-box-shadow:0 3px 10px 0 #CCC;
+-webkit-box-shadow:0 3px 10px 0 #ccc;
+text-shadow:0px 0px 5px #fff;
+}
+
+
+/******************************************--------CSS HOME--------******************************************************************/	
+ .home{	background-color:#82BACC;
+		position:fixed
+		
+ }
+/******************************************--------CSS Nossa Historia-------*************************************************************/	
+.NossaHistoria{background-color:#FF6699;
+}
+
+
+/*******************************************--------CSS ação Social--------****************************************************************/	
+.acaoSocial{background-color:#80334C;
+}
+
+
+/******************************************--------CSS campanhas-------*************************************************************/	
+.campanhas{background-color:#333300;
+} 
+
+
+/******************************************--------CSS evangelismo--------*************************************************************/	
+.evangelismo{background-color:#FF99FF;
+}
+
+
+/******************************************--------CSS fale Conosco--------**************************************************************/	
+.faleConosco{background-color:#CCFF33;
+}
+
+
+/******************************************--------CSS juntaDeMissões--------********************************************************/	
+.juntaDeMissões{background-color:#006699;
+}
+ 
+/******************************************--------CSS CONTATOS--------****************************************************************/	
+.contatos{background-color:#666699;
+}
+
+/************************************************** CSS IMAGENS ***********************************************************************/
+.td1 { padding:0px;}
+	
+.iframe1{background-color:#0066FF;
+}
+
+/************************************************** CSS IMAGENS ***********************************************************************/
+.buca_por_categoria{background-color:#D1FFFF;
+
+}
+/************************************************** CSS Div topo ***********************************************************************/
+.imgTopo{ width:1600px;
+			height:140px;	
+}
+/*************************************************************************CSS Tela de Loing******************************************************************/
+.telaLoing{background-color:#FFFFCC;}
+

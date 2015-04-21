@@ -1,0 +1,35 @@
+Cadastro de Usuários V1.1 - 22/02/2003
+
+Autor: Elton Kuzniewski - elton@ac.unisul.br
+
+O que é?
+Esse é um simples exemplo de cadastro em php+mysql.
+
+Como Configurar?
+Para configurar, basta somente colocar os dados no arquivo _conf.php e 
+mudar o nome do seu banco de dados no arquivo cadastro.php
+
+Arquivos que devem acompanhar?
+São 5 os arquivos orginais: 
+- cadastro.php #onde basicamente é feita os acessos ao banco de dados
+- telaprincipal.php #podendo ser renomeado para index.php caso tenha necessidade
+- db_setup.php #utilitario que deve ser executado (somente 1 vez basta) para a criaçao da tabela no mysql
+- _conf.php #dados locais para serem utilizados para a conexão
+- Leia-me.txt # esse arquivo...                            
+
+O que mudou em relação a versão 1.0?
+Basicamente o objetivo continuou o mesmo, ou seja, mostrar apenas como 
+funciona a conexão do php com o mysql e como é gravado os dados...
+O diferencial dessa versão é que o usuário não precisa quebrar a cabeça
+criando o banco de dados, foi incorporado o arquivo "db_setup.php" para
+a criação automática do mesmo. Basta somente ser executado pelo browser.
+
+Suporte?
+Dúvidas, podem entrar em contato comigo, no e-mail elton@ac.unisul.br
+
+
+
+--
+Elton Kuzniewski
+elton@ac.unisul.br
+http://www.intercorp.com.br/eltonk/

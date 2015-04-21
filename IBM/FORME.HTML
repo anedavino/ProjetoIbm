@@ -1,0 +1,607 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<title>Projeto Pratica Profissional I</title>
+	
+		<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="js/slideshow.js"></script>
+		<script type="text/javascript" src="js/cufon-yui.js"></script>
+		<script type="text/javascript" src="js/Arial.font.js"></script>
+		<script type="text/javascript"></script>
+		<script type="text/javascript" src="js/fancyzoom.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('div.photo a').fancyZoom({directory: 'images/zoom', scaleImg: true, closeOnClick: true});
+		});
+	</script>
+</head>
+<body>
+<script>
+function Enviar() 
+{ 
+	var nome = document.getElementById("nomeid"); 
+if (nome.value != "") 
+		{ alert('Obrigado sr(a) ' + nome.value + ' Os seus dados foram encaminhados com sucesso!'); 
+} 
+		} 
+		
+	 $imagemPerfil = $_FILES["imagemPerfil"]; 
+	 $host = "localhost"; 
+	 $username = "IBM"; $password = "gabi86588391"; 
+	 $db = "BdIgreja"; 
+	 if($imagemPerfil != NULL) 
+	 {  $nomeFinal = time().'.jpg'; if (move_uploaded_file($imagemPerfil['tmp_name'], $nomeFinal)) { $tamanhoImg = filesize($nomeFinal);
+		$mysqlimagem = addslashes(fread(fopen($nomeFinal, "r"), $tamanhoImg)); mysql_connect($host,$username,$password) or die("Impossível Conectar");
+		@mysql_select_db($db) or die("Impossível Conectar");
+		mysql_query("INSERT INTO cadastro(imagem) VALUES ('$mysqlimagem')") or die("O sistema não foi capaz de executar a query");
+		unlink($nomeFinal); header("location:FORMULÁRIOnovo.html"); } } else { echo"Você não realizou o upload de forma satisfatória."; } 
+				
+</script>
+
+ <!---->
+<script>
+function proximoCampo(atual,proximo){
+if(atual.value.length >= atual.maxLength){
+document.getElementById(proximo).focus();
+}
+}
+</script>
+<!---->
+<script type="text/javascript">
+ 
+    jQuery(document).ready(function($) {
+ 
+            $("#telefone").mask("(99) 9999-9999");     // Máscara para 
+			
+ }); 
+ 
+</script>
+ 
+
+<!---->
+
+	<div id="bg">
+		<div class="wrap">
+			
+			<!-- logo -->
+			<div>
+			<h1 class="logo1">1ª Igreja Batista em Muribeca <br/><span class="logo2">
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Pr. Elias José da Siva</span></h1>
+		</div>
+			<!-- /logo -->
+			
+			<!-- menu -->
+			<div class="mainmenu">
+				<ul id="menu">
+					<li><a class="current" href="index.html">Home</a></li>
+					<li><a href="inner.html">Quem somos</a>
+						<ul>
+							<li><a href="#">Nossa História</a></li>
+							<li><a href="#">Evagelismo</a></li>
+							<li><a href="#">Ação social</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Eventos</a></li>
+					<li><a href="FORME.html">Formulário de cadastro</a></li>
+					<li><a href="#">Relatórios</a></li>
+				</ul>
+			</div>
+			<!-- /menu -->
+			
+			<!-- pitch -->
+			<div id="pitch">
+				<div id="slideshow">
+					
+					<!-- 1st frame -->
+					<div class="active">
+						<img src="images/pitch/pitch1.jpg" alt="" />
+						<div class="overlay transparent">
+							<h2>Mensagem Bíblica</h2>
+							<p>Mas, buscai primeiro o reino de Deus, e a sua justiça, e todas estas coisas vos serão acrescentadas. <br/>Mateus 6:33</p>
+						</div>
+						<p class="arrow"><a href="#"></a></p>
+					</div>
+					<!-- /1st frame -->
+					
+					<!-- 2nd frame -->
+					<div>
+						<img src="images/pitch/pitch2.jpg" alt="" />
+						<div class="overlay transparent">
+							<h2>Mensagem Bíblica</h2>
+							<p>O SENHOR é o meu pastor, nada me faltará.<br/>Salmos 23:1.</p>
+						</div>
+						<p class="arrow"><a href="#"></a></p>
+					</div>
+					<!-- /2nd frame -->
+					
+					<!-- 3rd frame -->
+					<div>
+						<img src="images/pitch/pitch3.jpg" alt="" />
+						<div class="overlay transparent">
+							<h2>Mensagem Bíblica</h2>
+							<p>Certamente que a bondade e a misericórdia me seguirão todos os dias da minha vida;
+							e habitarei na casa do Senhor por longos dias.<br/>Salmos 23:6</p>
+						</div>
+						<p class="arrow"><a href="#"></a></p>
+					</div>
+					<!-- 3rd frame -->
+					
+				</div>
+			</div>
+			<!-- /pitch -->
+			
+			<!-- main -->
+			<div id="main">
+				
+				<!-- DADOS PESSOAIS-->
+<fieldset>
+<legend>Dados Pessoais</legend>
+<p>____________________________________________________________________________________</p>
+<table cellspacing="5">
+<tr>
+<td>
+	<label   for="nome"> Nome: </label>
+</td>
+	<td align="left">
+		<input type="text" size="60" name="Nome" required="required">
+	</td>
+</tr>
+
+<tr>
+<td>
+	<label   for="NomePai"> Nome do Pai:</label>
+</td>
+	<td align="left">
+		<input type="text" size="60" name="NomePai" required="required">
+	</td>
+</tr>
+
+<tr>
+<td>
+	<label   for="NomeMãe"> Nome da Mãe: </label>
+</td>
+	<td align="left">
+		<input type="text" size="60" name="NomeMãe" required="required">
+	</td>
+</tr>
+
+<tr>
+<td>
+	<label>Data de Nascimento: </label>
+</td>
+   <td align="left">
+   <INPUT type="text" id="campo1" maxlength="2"  value="" onkeyup="proximoCampo(this, 'campo2')" placeholder="Dia" size="2" required="required"> 
+   <INPUT type="text" id="campo2" maxlength="2"  value="" onkeyup="proximoCampo(this, 'campo3')" placeholder="Mês" size="2" required="required"> 
+   <INPUT type="text" id="campo3" maxlength="4"  value="" onkeyup="proximoCampo(this, 'campo4')" placeholder="Ano" size="4" required="required" >
+</td>
+</tr>
+
+ <tr>
+<td>
+	<label>Data de Conversão: </label>
+</td>
+   <td align="left">
+   <input type="text" id="campo4" size="2" maxlength="2" maxlength="2" placeholder="Dia" required="required" value="" onkeyup="proximoCampo(this, 'campo5')"> 
+   <input type="text" id="campo5" size="2" maxlength="2" maxlength="2" placeholder="Mês" required="required" value="" onkeyup="proximoCampo(this, 'campo6')"> 
+   <input type="text" id="campo6" size="4" maxlength="4" maxlength="4" placeholder="Ano" required="required" value="" onkeyup="proximoCampo(this, 'campo7')">
+</td>
+</tr>
+  
+<tr>
+<td>
+   <label>Data de Batismo: </label>
+</td>
+    <td align="left">
+	<input type="text" id="campo7" size="2" maxlength="2" maxlength="2" placeholder="Dia" value="" onkeyup="proximoCampo(this, 'campo8')"> 
+	<input type="text" id="campo8" size="2" maxlength="2" maxlength="2" placeholder="Mês" value="" onkeyup="proximoCampo(this, 'campo9')"> 
+    <input type="text" id="campo9" size="4" maxlength="4" maxlength="4" placeholder="Ano" value="" onkeyup="proximoCampo(this, 'campo')">
+	</td>
+</tr>
+
+<tr>
+<td>
+	<label for="sexo">Sexo:</label>
+</td>
+<td align="left">
+    <select name="sexo" required="required"> 
+	<option ></option> 
+    <option value="F">Feminino</option> 
+    <option value="M">Masculino</option> 
+</td>
+</tr>
+
+<tr>
+<td>
+	<label for="EstadoCivil" cellspacing="5">Estado Civil:</label>
+</td>
+<td align="left">
+    <select name="EstadoCivil"> 
+	<option ></option> 
+    <option >Solteiro(a)</option> 
+    <option >Casado(a)</option> 
+	<option >Divorciado(a)</option>
+	<option >Viúvo(a)</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+	<label   for="Nome do Pai">Cônjuge:</label>
+</td>
+	<td align="left">
+		<input type="text" size="60" name="Cônjuge" >
+	</td>
+</tr>
+
+<tr>
+<td>
+	<label for="QuantidadeFilhos" cellspacing="5">Quantidade de filhos:</label>
+</td>
+<td align="left">
+    <select name="Quantidade de filhos"> 
+	<option ></option> 
+    <option >1</option> 
+    <option >2</option> 
+	<option >3</option>
+	<option >4</option>
+	<option >5</option>
+	<option >6</option>
+	<option >7</option>
+	<option >8</option>
+	<option >9</option>
+	<option >10</option>
+	<option >11</option>
+	<option >12</option>
+	<option >13</option>
+	<option >14</option>
+	<option >15</option>
+	<option >16</option>
+	<option >17</option>
+	<option >18</option>
+	<option >19</option>
+	<option >20</option>
+	<option >21</option>
+	<option >22</option>
+	<option >23</option>
+	<option >24</option>
+	<option >25</option>
+	<option >26</option>
+	<option >27</option>
+	<option >28</option>
+	<option >29</option>
+	<option >30</option>
+			
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+	<label for="rg">RG: </label>
+</td>
+   <td align="left">
+	<input type="text" name="rg" size="19" maxlength="7" > 
+   </td>
+</tr>
+
+<tr>
+<td>
+	<label>CPF:</label>
+	
+</td>
+   <td align="left">
+		<input type="text" id="campo10" size="11" maxlength="9" value="" onkeyup="proximoCampo(this, 'campo11')"> - <input type="text" id="campo11" size="2" maxlength="2">
+   </td>
+</tr>
+</table>
+</fieldset>
+
+<br/>
+	<br/>
+<!-- ENDEREÇO -->
+
+<fieldset>
+ <legend>Dados de Endereço</legend>
+ <p>____________________________________________________________________________________</p>
+ <table cellspacing="5">
+
+  <tr>
+   <td>
+    <label for="rua">Rua:</label>
+   </td>
+   <td align="left">
+    <input type="text" size="50" name="rua" required="required">
+   </td>
+   <td>
+    <label for="numero">Numero:</label>
+   </td>
+   <td align="left">
+    <input type="text" name="numero" size="4" required="required">
+   </td>
+  </tr>
+  
+  <tr>
+   <td>
+    <label for="bairro">Bairro: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="bairro" required="required">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="estado">Estado:</label>
+   </td>
+   <td align="left">
+    <select name="estado" required="required"> 
+	<option ></option> 
+    <option value="ac">Acre</option> 
+    <option value="al">Alagoas</option> 
+    <option value="am">Amazonas</option> 
+    <option value="ap">Amapá</option> 
+    <option value="ba">Bahia</option> 
+    <option value="ce">Ceará</option> 
+    <option value="df">Distrito Federal</option> 
+    <option value="es">Espírito Santo</option> 
+    <option value="go">Goiás</option> 
+    <option value="ma">Maranhão</option> 
+    <option value="mt">Mato Grosso</option> 
+    <option value="ms">Mato Grosso do Sul</option> 
+    <option value="mg">Minas Gerais</option> 
+    <option value="pa">Pará</option> 
+    <option value="pb">Paraíba</option> 
+    <option value="pr">Paraná</option> 
+    <option value="pe">Pernambuco</option> 
+    <option value="pi">Piauí</option> 
+    <option value="rj">Rio de Janeiro</option> 
+    <option value="rn">Rio Grande do Norte</option> 
+    <option value="ro">Rondônia</option> 
+    <option value="rs">Rio Grande do Sul</option> 
+    <option value="rr">Roraima</option> 
+    <option value="sc">Santa Catarina</option> 
+    <option value="se">Sergipe</option> 
+    <option value="sp">São Paulo</option> 
+    <option value="to">Tocantins</option> 
+   </select>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="cidade">Cidade: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="cidade" required="required">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="cep">CEP: </label>
+   </td>
+   <td align="left">
+    <input type="text" id="campo12" size="5" maxlength="5" value="" onkeyup="proximoCampo(this, 'campo13')"> - <input type="text" id="campo13" size="3" maxlength="3">
+   </td>
+  </tr>
+  
+  <tr>
+   <td>
+    <label for="Referencia">Referência: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="Referencia" required="required">
+   </td>
+  </tr>
+  
+ </table>
+</fieldset>
+<br />
+<br />
+
+<!-- DADOS DE PERFIL -->
+
+<fieldset>
+	<legend>Dados do Perfil</legend>
+	<p>____________________________________________________________________________________</p>
+	
+	<table cellspacing="5">
+<tr>
+	<td>
+		<label for="imagem">Imagem de perfil:</label>
+	</td>
+		<input type="file" name="imagem"/>
+</tr>
+<tr>
+	<td>
+		<label for="status" cellspacing="5">Status:</label>
+	</td>
+<td align="left">
+    <select name="status" required="required"> 
+	<option ></option> 
+    <option >Ativo</option> 
+    <option >Afastado</option> 
+	<option >Em disciplina</option>
+	<option >Falecido</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+	<label for="nivel" cellspacing="5">Nível:</label>
+</td>
+<td align="left">
+    <select name="nivel" required="required"> 
+	<option ></option> 
+    <option >Pastor</option> 
+    <option >Diacono(a)</option> 
+	<option >Membro</option>
+	<option >Congregado</option>
+	</select>
+</td>
+</tr>
+
+<br/>
+<br/>
+</table>
+	</fieldset>
+
+<br />
+<br />
+<!-- DADOS DE CONTATOS-->
+
+<fieldset>
+ <legend>Dados de Contatos</legend>
+ 
+ <p>____________________________________________________________________________________</p>
+
+ <table cellspacing="5">
+  <tr>
+   <td>
+    <label for="nome">Fone 1: </label>
+   </td>
+   <td align="left">
+    <input type="text" id="telefone" size="9" maxlength="9" required="required">
+	<td>
+	
+<label for="nome">Fone 2: </label>
+   </td>
+   <td align="left">
+    <input type="text" id="telefone" size="9" maxlength="9" >
+   </td>
+  </tr>
+  <tr>
+
+ <tr>
+ <td>
+   <label for="email">Email: </label>
+ </td>
+ <td align="left">
+ <input type="text" name="email" size="40">
+</td>
+</tr>
+
+</table>
+</fieldset>
+  
+<br />
+<input type="submit" value="Salva cadastro">
+<input type="reset" value="Novo cadastro">
+</form>
+	<br/>
+		<br/>
+			<br/>
+				<br/>
+					<br/>
+					<p>____________________________________________________________________________________</p>
+				
+			
+				<!-- bits -->
+				<div id="bits">
+					<div class="bit">
+						<h4>Culto Jovem</h4>
+						<div class="photo">
+							<a href="#approach"><img src="images/thumb1.png" alt="Thumb" /></a>
+						</div>
+						<p>Eu vos escrevi, jovens, porque sois fortes, e a palavra de Deus está em vós, e já vencestes o maligno.(1 João 2:14)<br/>Culto Todos os Domingos às 09h00 </p>
+						<p class="more"><a href="#"> &nbsp </a></p>
+						<div id="approach">
+							<img src="images/portfolio1.jpg" alt="Approach" />
+						</div>
+					</div>
+					<div class="bit">
+						<h4>Escola Bíblica do Minical</h4>
+						<div class="photo">
+							<a href="#methods"><img src="images/thumb2.png" alt="Thumb" /></a>
+						</div>
+						<p>Bem-aventurado o homem que não anda segundo o conselho dos ímpios, nem se detém no caminho dos pecadores, 
+						nem se assenta na roda dos escarnecedores.
+						Antes tem o seu prazer na lei do Senhor, e na sua lei medita de dia e de noite.(Salmos 1:1-2)<br/> Todos os Domingos às 09h00</p>
+						
+						<p class="more"><a href="#"> &nbsp </a></p>
+						<div id="methods">
+							<img src="images/portfolio2.jpg" alt="Methods" />
+						</div>
+					</div>
+					<div class="bit last">
+						<h4>Culto de Oração</h4>
+						<div class="photo">
+							<a href="#results"><img src="images/thumb3.png" alt="Thumb" /></a>
+						</div>
+						<p>“Vinde, adoremos e prostremo-nos; ajoelhemo-nos diante do Senhor, que nos criou” (Sl 95.6)<br/> Cultos todas as Quartas feiras às 19h00</p>
+						<p class="more"><a href="#"> &nbsp </a></p>
+						<div id="results">
+							<img src="images/portfolio3.jpg" alt="Results" />
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<!-- /bits -->
+		
+			</div>
+			<!-- /main -->
+			
+			<!-- side -->
+			<div id="side">
+				<h4>Hórario dos Cultos</h4>
+					<div class="news">
+						<p> Domingo às 9h00
+							<br/> &nbsp  - Escola Bíblica<br/><br/>
+							Domingo às 19h00
+							<br/> &nbsp  - Culto de Celebração<br/><br/>
+							Quarta às 19h00
+							<br/> &nbsp - Culto de Oração<br/><br/>
+							Sábado às 19h00
+							<br/> &nbsp  - Culto Jovem
+					</p>
+				</div>
+				
+				<div class="news">
+					<h4>Informativos</h4>
+					<p> - Boletim</p>
+				</div>
+				
+				<div class="news">
+					<h4>Noticias</h4>
+					<p> - Sábado 18 de Abril de 2015 não haverá culto Jovem.<br/> - No Próximo sábado 25 voltaremos as atividades normais.</p>
+				</div>
+				
+				<div id="quote">
+					<h4>Aniversariantes do mês</h4>
+					<p> Abril
+						<br/> &nbsp  01 - Débora Clarindo
+						<br/> &nbsp  07 - Marta Ferreira
+						<br/> &nbsp  15 - Israel Espindola
+						<br/> &nbsp  19 - José Roberto
+						<br/> &nbsp  29 - Ana Eloísa
+							
+					</p>
+				</div>
+
+			</div>
+			<!-- /side -->
+		</div>
+			
+		<!-- footer -->
+		<div id="footer">
+			<div id="footerbg">
+				<div class="wrap">
+	
+					<!-- /footer links --> 
+					 <H2 CLASS="RODAPÉ1">&nbsp Endereço</H2> 
+					<H3 CLASS="RODAPÉ">Rua do Rosário, Muribeca dos Gruararapes<br/>
+					Jaboatão dos Guararapes - PE</H3>
+					
+					<p class="nossaEmpresa"> IT Solutio </p>
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<!-- /footer -->
+		
+	</div>
+</body>
+</html>

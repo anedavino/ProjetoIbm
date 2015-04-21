@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+<!--CÓDIGO JQUERY-->
+<script type="text/javascript">
+$(function() {
+$(window).scroll(function()
+{
+var topo = $('.topo').height(); // AUTURA DO TOPO
+var rodape = $('.rodape').height(); // AUTURA DO RODAPÉ
+var scrollTop = $(window).scrollTop(); // QTO FOI ROLADO A BARRA
+var tamPagina = $(document).height(); // AUTURA DA PÁGINA
+ 
+if(scrollTop > topo){
+  $('.menu').css({'position' : 'absolute', 'margin-top' : scrollTop - (topo-5)});
+}else{
+  $('.menu').css({'position' : 'relative', 'margin-top' : 0});
+	 }  	 
+});
+});				
+</script>
+<!---------------------------------------------------------------------------------------->
+<link rel="stylesheet" href="getac_novo_css.css">
+</head>
+
+<body>
+
+<!--topo-->
+<iframe class="iframe1" name="iframe1" width="100%" height="210" frameborder="3" scrolling="no" 
+		marginheight="0" marginwidth="0" src="getac2-nemu.html">  </iframe>
+		
+			<div class="topo" class="center">
+  <br /><br />
+  <p>GETAC_Guia Pernambuco</p>
+  <p>www.getac.com.br</p>
+</div>
+
+<!--MENU-->
+<nav class="conteudo">
+  <ul class="menu" >
+        <li><a href="home.php" target="iframe2">Home</a></li>
+        <li><a href="pernambuco.html" target="iframe2">Conheça Pernambuco</a></li>
+		<li><a href="galeria_de_fotos.html" target="iframe2">Galeria de fotos</a></li>
+		<li><a href="contatos.html" target="iframe2">Contatos</a></li>
+		<li><a href="buca_por_categoria.html">Busca Por Categoria </a>
+		<ul>
+            <li><a href="http://www.praias-360.com.br/pernambuco/cabo-de-santo-agostinho/praia-pedra-do-xareu#.VNOukp3F_O4"target="iframe2">Praias</a></li>
+            <li><a href="http://www.papacapim.com.br/site/secao/index.php" target="iframe2">Restaurantes</a></li>
+            <li><a href="http://www.shopping-guararapes.com/" target="iframe2">Shoppings</a></li>
+			<li><a href="http://www.birutabar.com.br/" target="iframe2">Bares</a></li>
+			<li><a href="http://www.recifeolinda.com.br/recife/marco-zero" target="iframe2">Ar livre</a></li>
+			<li><a href="http://www.chevrolethallpe.com.br/" target="iframe2">Shows</a></li>
+			<li><a href="http://eucurtorecife.com.br/" target="iframe2">Eventos Gratuitos</a></li>
+			<li><a href="http://guia.melhoresdestinos.com.br/onde-ficar-recife-108-1080-p.html" target="iframe2">Onde Ficar</a></li>
+			<li><a href="http://www.institutoricardobrennand.org.br/index2.html" target="iframe2">Moseus</a></li>
+			<li><a href="http://www.tripadvisor.com.br/Hotel_Review-g2347105-d6218795-Reviews-Camping_do_Magico-Bonito_State_of_Pernambuco.html" target="iframe2">Acampamentos</a></li>
+        </ul>
+        </li>		
+</ul>
+</nav> 
+
+<iframe name="iframe2" width="100%" height="1000" Scrolling="no" src="home.php">
+
+
+<!--RODAPÉ-->
+<div class="rodape" class="clear">
+  <p align="center">Contatos</p>
+</div> 
+
+</body>
+</html>

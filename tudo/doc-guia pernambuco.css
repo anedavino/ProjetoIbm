@@ -1,0 +1,196 @@
+/*position:fixed*/
+/******************************************--------CSS DO MENU--------****************************************************************/		
+
+*{margin:0 auto; padding: 0;}
+ 
+body{
+font-family: arial, helvetica, sans-serif;
+font-size:26px;
+}
+ 
+.menu{
+list-style:none;
+border:1px solid #001452;
+float:left; /*right;*/
+position:fixed;
+background-color:#66CCFF;
+z-index:9;
+
+}
+
+.menu li{
+position:relative;
+float:left;
+border-right:1px solid #001452;
+}
+
+.menu li a{color:#000000; 
+		 text-decoration:none; 
+		 padding:5px 10px; 
+		 display:block;
+		 }
+		 
+.menu li:hover ul, .menu li.over ul{display:block;}
+
+.menu li ul li{
+border:1px solid #c0c0c0;
+display:block;
+width:150px;
+}
+
+.menu li ul li{
+border:2px solid #c0c0c0;
+display:block;
+width:260px;
+}
+
+.menu li  ul{
+position:absolute;
+top:25px;
+left:0;
+background-color:#fff;
+display:none;
+}  
+
+ 
+.menu li a:hover{
+background:#333;
+color:#fff;
+-moz-box-shadow:0 3px 10px 0 #CCC;
+-webkit-box-shadow:0 3px 10px 0 #ccc;
+text-shadow:0px 0px 5px #fff;
+}
+
+
+/******************************************--------CSS HOME--------******************************************************************/	
+ .home{	background-color: #0099FF;
+		position:fixed
+		
+ }
+/******************************************--------CSS PERNAMBUCO-------*************************************************************/	
+.pernambuco{background-color:#FF6699;
+}
+
+
+/*******************************************--------CSS LAZER--------****************************************************************/	
+.lazer{background-color:#80334C;
+}
+
+
+/******************************************--------CSS PERNAMBUCO-------*************************************************************/	
+.eventos{background-color:#333300;
+} 
+
+
+/******************************************--------CSS ONDE COMER--------*************************************************************/	
+.onde_comer{background-color:#FF99FF;
+}
+
+
+/******************************************--------CSS ONDE FICAR--------**************************************************************/	
+.onde_ficar{background-color:#CCFF33;
+}
+
+
+/******************************************--------CSS GALERIA DE FOTOS--------********************************************************/	
+.galeria_de_fotos{background-color:#006699;
+}
+ 
+/******************************************--------CSS CONTATOS--------****************************************************************/	
+.contatos{background-color:#666699;
+}
+
+/************************************************** CSS IMAGENS ***********************************************************************/
+.td1 { padding:0px;}
+	
+.iframe1{background-color:#0066FF;
+}
+
+/************************************************** CSS IMAGENS ***********************************************************************/
+.buca_por_categoria{background-color:#D1FFFF;
+
+
+}
+
+/************************************************** CSS CALENDÁRIO *****************************************************************/
+.calendario {
+     width: 25px%;
+     border-radius: 5px;
+     border: 2px solid #000000;
+     background-color:#C5FFFF;
+     text-align: center;
+	 float:left; 
+	 
+}
+
+.caption1 {
+     padding: 18px 0 18px 0;
+     font:bold 19px verdana;
+     background-color:#2E5D8B;
+	 border-radius: 5px;
+	 border: 2px solid #000000;
+	 color: #FFFFFF;
+	 
+	 
+}
+
+.th1 {
+     background: #C9E9FF;
+	border: 2px solid #2E5D8B;
+	
+}
+
+th, td {
+     padding:25px;
+}
+/*topo*/
+
+/*.topo p{ text-align:center }
+
+.topo{ 
+    width:100%; 
+    height: 120px;
+    background-color:#0099FF;
+    color:#FFFFFF;
+	}
+
+.center{ 
+    margin:0 auto;
+    overflow:hidden;
+}*/
+
+.imgTopo{ width:1600px;
+			height:140px;
+		
+}
+
+
+/*********************************************************************RODAPÉ*************************************************************************/
+.rodape {
+    clear:both;
+    background-color: #0099FF;
+    color: #FFF;
+    height:200px;
+    line-height:200px;
+    font-size:18px;
+}
+.clear{ clear:both }
+
+h3{ color:#FFFFFF;padding-bottom:5px; border-bottom:1px solid #FFF; }
+
+
+/*****************************************************************IFRAME2****************************************************************************/
+.iframe2{background-color:
+		
+		}
+/***************************************************************BUSCA POR CATEGORIA*****************************************************************/
+.busca_categoria{size
+
+}
+/*************************************************************************MENSAGEN******************************************************************/
+.mensagenBoasvindas
+
+/****/
+
+.h1_categoria
+

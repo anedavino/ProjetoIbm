@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>guia pernambuco</title>
+	<link rel="stylesheet" href="doc-guia pernambuco.css">
+	<meta charset="UTF-8" />
+	<base target="iframe2" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	
+<script type="text/javascript">
+$(function() {
+$(window).scroll(function()
+{
+var topo = $('.topo').height(); // altura do topo
+var rodape = $('.rodape').height(); // altura do rodape
+var scrollTop = $(window).scrollTop(); // qto foi rolado a barra
+var tamPagina = $(document).height(); // altura da página
+ 
+if(scrollTop > topo){
+  $('.menu').css({'position' : 'absolute', 'margin-top' : scrollTop - (topo-5)});
+}else{
+  $('.menu').css({'position' : 'relative', 'margin-top' : 0});
+}               
+});
+});
+
+</script>
+</head>
+
+<body>	
+<!--width=largura, height=autura,FrameBorder= Borda do Iframe. É recomendado deixar esse valor em Zero,
+Scrolling= Controla o aparecimento da barra de rolagem, altere para “no” caso não queira que ela não seja exibida,
+SRC= Link para a página que será exibida no Iframe -->
+
+<!--____________________________________________________ IFRAME1____________________________________________-->
+	
+<div class="topo" class="center" width="100%">
+	<img class="imgTopo"src="images.jpg"/>
+</div>
+<!--____________________________________________________ IFRAME2 = MENU__________________________________________________-->
+<nav>
+  <ul class="menu" >
+        <li><a href="home.html" target="iframe2">Home</a></li>
+        <li><a href="home.html" target="iframe2">Conheça a IBM </a>
+			<ul>
+				<li><a href="NossaHistoria.html" target="iframe2">Nossa História</a></li>
+                <li><a href="evangelismo.html" target="iframe2">Evagelismo</a></li>
+				<li><a href="açãoSocial.html" target="iframe2">Ação Social</a></li>
+				<li><a href="juntaDeMissões.html" target="iframe2">Junta de Missões</a></li>
+				<li><a href="campanhas.html" target="iframe2">Campanhas</a></li>  
+            </ul>
+        </li>
+		<li><a href="eventos.html" target="iframe2">Eventos</a></li>
+		<li><a href="faleConosco.html" target="iframe2">Fale Com nosco</a></li>
+	</ul>
+</nav> 
+
+<!--_____________________________________________ HTML DELIMITANDO O IFRAME2__________________________________ -->
+<div class ="iframe2"> <iframe name="iframe2"  width="100%" height="700" src="home.html"></iframe> </div>
+
+<!--RODAPÉ-->
+
+<!--<footer class="rodape" align="center">RODAPÉ DO SITE</footer>-->
+
+</body>
+</html> 
